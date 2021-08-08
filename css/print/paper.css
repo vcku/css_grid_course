@@ -25,4 +25,15 @@ html {
 	background: #fff;
 	width: auto;
 	height: auto;
-	overflow: vis
+	overflow: visible;
+}
+
+/* SECTION 2: Remove any elements not needed in print.
+   This would include navigation, ads, sidebars, etc. */
+.nestedarrow,
+.controls,
+.reveal .progress,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-backg
