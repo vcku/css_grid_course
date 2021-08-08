@@ -9,4 +9,20 @@
 /* SECTION 1: Set default width, margin, float, and
    background. This prevents elements from extending
    beyond the edge of the printed page, and prevents
-   unnecessary background images from prin
+   unnecessary background images from printing */
+body {
+	background: #fff;
+	font-size: 13pt;
+	width: auto;
+	height: auto;
+	border: 0;
+	margin: 0 5%;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+html {
+	background: #fff;
+	width: auto;
+	height: auto;
+	overflow: vis
