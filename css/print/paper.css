@@ -36,4 +36,12 @@ html {
 .reveal.overview,
 .fork-reveal,
 .share-reveal,
-.state-backg
+.state-background {
+	display: none !important;
+}
+
+/* SECTION 3: Set body font face, size, and color.
+   Consider using a serif font for readability. */
+body, p, td, li, div, a {
+	font-size: 16pt!important;
+	font-family: Georgia, "Times New R
