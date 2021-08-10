@@ -44,4 +44,12 @@ html {
    Consider using a serif font for readability. */
 body, p, td, li, div, a {
 	font-size: 16pt!important;
-	font-family: Georgia, "Times New R
+	font-family: Georgia, "Times New Roman", Times, serif !important;
+	color: #000;
+}
+
+/* SECTION 4: Set heading font face, sizes, and color.
+   Diffrentiate your headings from your body text.
+   Perhaps use a large sans-serif for distinction. */
+h1,h2,h3,h4,h5,h6 {
+	color: 
