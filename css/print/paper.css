@@ -60,4 +60,8 @@ h1,h2,h3,h4,h5,h6 {
 	text-align: left;
 	letter-spacing: normal;
 }
-/* Ne
+/* Need to reduce the size of the fonts for printing */
+h1 { font-size: 26pt !important;  }
+h2 { font-size: 22pt !important; }
+h3 { font-size: 20pt !important; }
+h4 { font-size: 20pt !important; font-variant: s
