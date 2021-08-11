@@ -70,3 +70,15 @@ h6 { font-size: 18pt !important; font-style: italic; }
 
 /* SECTION 5: Make hyperlinks more usable.
    Ensure links are underlined, and consider appending
+   the URL to the end of the link for usability. */
+a:link,
+a:visited {
+	color: #000 !important;
+	font-weight: bold;
+	text-decoration: underline;
+}
+/*
+.reveal a:link:after,
+.reveal a:visited:after {
+	content: " (" attr(href) ") ";
+	color: #
