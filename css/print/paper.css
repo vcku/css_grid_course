@@ -81,4 +81,17 @@ a:visited {
 .reveal a:link:after,
 .reveal a:visited:after {
 	content: " (" attr(href) ") ";
-	color: #
+	color: #222 !important;
+	font-size: 90%;
+}
+*/
+
+
+/* SECTION 6: more reveal.js specific additions by @skypanther */
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	
