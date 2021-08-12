@@ -94,4 +94,17 @@ ul, ol, div, p {
 	width: auto;
 	height: auto;
 	display: block;
-	
+	overflow: visible;
+	margin: auto;
+	text-align: left !important;
+}
+.reveal .slides {
+	position: static;
+	width: auto;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin-left: auto;
+	margin-top: auto;
+	padding: au
