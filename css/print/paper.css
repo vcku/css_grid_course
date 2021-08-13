@@ -124,4 +124,15 @@ ul, ol, div, p {
 	        perspective-origin: 50% 50%;
 }
 .reveal .slides>section,
-.reveal .slides>
+.reveal .slides>section>section {
+
+	visibility: visible !important;
+	position: static !important;
+	width: 90% !important;
+	height: auto !important;
+	display: block !important;
+	overflow: visible !important;
+
+	left: 0% !important;
+	top: 0% !important;
+	m
