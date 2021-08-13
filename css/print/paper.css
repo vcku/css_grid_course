@@ -135,4 +135,12 @@ ul, ol, div, p {
 
 	left: 0% !important;
 	top: 0% !important;
-	m
+	margin-left: 0px !important;
+	margin-top: 0px !important;
+	padding: 20px 0px !important;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !
