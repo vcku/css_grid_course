@@ -143,4 +143,13 @@ ul, ol, div, p {
 
 	-webkit-transform-style: flat !important;
 	   -moz-transform-style: flat !important;
-	    -ms-transform-style: flat !
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+.reveal section {
+	pag
