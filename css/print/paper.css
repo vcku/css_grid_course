@@ -152,4 +152,12 @@ ul, ol, div, p {
 	        transform: none !important;
 }
 .reveal section {
-	pag
+	page-break-after: always !important;
+	display: block !important;
+}
+.reveal section .fragment {
+	opacity: 1 !important;
+	visibility: visible !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
