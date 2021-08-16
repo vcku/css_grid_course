@@ -161,3 +161,13 @@ ul, ol, div, p {
 
 	-webkit-transform: none !important;
 	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+.reveal section:last-of-type {
+	page-break-after: avoid !important;
+}
+.reveal section img {
+	display: block;
+	margin: 15px 0px;
+	background: 
