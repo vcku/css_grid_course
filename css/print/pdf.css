@@ -9,4 +9,17 @@
 /* SECTION 1: Set default width, margin, float, and
    background. This prevents elements from extending
    beyond the edge of the printed page, and prevents
-   unn
+   unnecessary background images from printing */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	font-size: 18pt;
+	width: 297mm;
+	height: 229mm;
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !
