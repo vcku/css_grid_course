@@ -22,4 +22,20 @@ body {
 	margin: 0 auto !important;
 	border: 0;
 	padding: 0;
-	float: none !
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+@page {
+	size: letter landscape;
+	margin: 0;
+}
+
+/* SECTION 2: Remove any elements not needed in print.
+   This would include
