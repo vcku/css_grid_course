@@ -38,4 +38,15 @@ html {
 }
 
 /* SECTION 2: Remove any elements not needed in print.
-   This would include
+   This would include navigation, ads, sidebars, etc. */
+.nestedarrow,
+.controls,
+.reveal .progress,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+/* SECTION 3: Set body 
