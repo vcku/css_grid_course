@@ -63,4 +63,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* SECTION 5: Make hyperlinks more usable.
-   Ensure links are underlined, and consider appendin
+   Ensure links are underlined, and consider appending
+   the URL to the end of the link for usability. */
+a:link,
+a:visited {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+
+/* SECTION 6: more reveal.js specific additions by @skypanther */
+ul, ol, div, p {
+	visibil
