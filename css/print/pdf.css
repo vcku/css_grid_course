@@ -74,4 +74,17 @@ a:visited {
 
 /* SECTION 6: more reveal.js specific additions by @skypanther */
 ul, ol, div, p {
-	visibil
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides 
