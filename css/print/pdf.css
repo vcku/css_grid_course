@@ -103,4 +103,9 @@ ul, ol, div, p {
 	text-align: center;
 
 	-webkit-perspective: none;
-	 
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspect
