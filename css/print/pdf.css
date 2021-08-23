@@ -126,4 +126,12 @@ ul, ol, div, p {
 
 	left: 0 !important;
 	top: 0 !important;
-	margin
+	margin: 0 !important;
+	padding: 2cm 2cm 0 2cm !important;
+	box-sizing: border-box !important;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
