@@ -143,3 +143,14 @@ ul, ol, div, p {
 	        transform: none !important;
 }
 .reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+.reveal .absolute-element {
+	margin-left: 2.2cm;
+	margin-top: 1.8cm;
+}
+.reveal sectio
