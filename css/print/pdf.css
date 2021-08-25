@@ -162,3 +162,19 @@ ul, ol, div, p {
 	    -ms-transform: none !important;
 	        transform: none !important;
 }
+.reveal section .slide-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+}
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+.reveal img {
+	box-shadow: none;
+}
+.reveal .roll {
+	ove
