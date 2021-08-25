@@ -177,4 +177,9 @@ ul, ol, div, p {
 	box-shadow: none;
 }
 .reveal .roll {
-	ove
+	overflow: visible;
+	line-height: 1em;
+}
+.reveal small a {
+	font-size: 16pt !important;
+}
