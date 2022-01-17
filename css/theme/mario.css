@@ -3,4 +3,9 @@
   margin: 0;
   box-shadow: none;
   background: none; }
-.reveal section img.svg-
+.reveal section img.svg-module {
+  background: #fff;
+  border: none;
+  width: 400px;
+  max-height: 1000px; }
+.reveal .dark h1, .reveal .dark h2, .reveal .dark h3, .reveal .dark h4, .reveal .dark h5, .reveal .dark h6, .reveal .dark p, .reveal .dark
