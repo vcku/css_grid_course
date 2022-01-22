@@ -24,4 +24,13 @@
     font-size: 4em;
     line-height: 0.1em;
     margin-left: -0.4em;
-    vertical-
+    vertical-align: -0.4em; }
+
+div.img-wrapper {
+  position: relative; }
+  div.img-wrapper > div.img-label {
+    font-family: "Comic Sans MS";
+    font-size: 24px;
+    line-height: 1.1;
+    position: absolute;
+    
