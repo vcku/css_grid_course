@@ -47,3 +47,14 @@ div.img-wrapper {
   left: 550px; }
 .enjoyment .enjoy-4 {
   bottom: 50px;
+  left: 700px; }
+.enjoyment .enjoy-5 {
+  top: 100px;
+  right: -10px; }
+
+div.mario-walk {
+  height: 96px;
+  width: 48px;
+  background: url("../../images/mario-walk.gif") no-repeat scroll 0 0; }
+
+.pref
