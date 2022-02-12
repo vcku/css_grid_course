@@ -57,4 +57,15 @@ div.mario-walk {
   width: 48px;
   background: url("../../images/mario-walk.gif") no-repeat scroll 0 0; }
 
-.pref
+.preferred-method {
+  color: #228b22; }
+
+.example-wrapper {
+  position: relative;
+  min-height: 100px;
+  min-width: 100px; }
+
+input[type="text"], input[type="number"] {
+  height: 38px;
+  padding: 6px 12px;
+  font-si
