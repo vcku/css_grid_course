@@ -68,4 +68,19 @@ div.mario-walk {
 input[type="text"], input[type="number"] {
   height: 38px;
   padding: 6px 12px;
-  font-si
+  font-size: 18px;
+  line-height: 1.5;
+  color: #555;
+  border-radius: 5px; }
+
+table {
+  max-width: 100%;
+  background-color: white; }
+
+th {
+  text-align: left; }
+
+.table {
+  width: 100%;
+  margin-bottom: 20px; }
+  .table > thead > tr 
