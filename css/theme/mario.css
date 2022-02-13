@@ -83,4 +83,13 @@ th {
 .table {
   width: 100%;
   margin-bottom: 20px; }
-  .table > thead > tr 
+  .table > thead > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  .table > tfoot > tr > td {
+    padding: 10px;
+    line-height: 1.42857;
+    vertical-align: top;
+   
