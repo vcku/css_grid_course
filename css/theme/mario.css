@@ -92,4 +92,10 @@ th {
     padding: 10px;
     line-height: 1.42857;
     vertical-align: top;
-   
+    border-top: 1px solid #bbbbbb; }
+  .table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #bbbbbb; }
+  .table > caption + thead > tr:first-child > th,
+  .table > caption + thead > tr:first-child > td,
+  .table >
