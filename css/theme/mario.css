@@ -103,4 +103,11 @@ th {
   .table > thead:first-child > tr:first-child > th,
   .table > thead:first-child > tr:first-child > td {
     border-top: 0; }
-  .tabl
+  .table > tbody + tbody {
+    border-top: 2px solid #bbbbbb; }
+  .table .table {
+    background-color: white; }
+
+.table-condensed > thead > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > 
