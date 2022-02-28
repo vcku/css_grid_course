@@ -134,4 +134,13 @@ th {
   background-color: #f9f9f9; }
 
 .table-hover > tbody > tr:hover > td,
-.
+.table-hover > tbody > tr:hover > th {
+  background-color: whitesmoke; }
+
+table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column; }
+
+table td[class*="col-"],
+table th
