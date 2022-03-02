@@ -143,4 +143,10 @@ table col[class*="col-"] {
   display: table-column; }
 
 table td[class*="col-"],
-table th
+table th[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell; }
+
+.table > thead > tr > td.active,
+.table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th,
