@@ -156,4 +156,9 @@ table th[class*="col-"] {
 .table > tbody > tr.active > th,
 .table > tfoot > tr > td.active,
 .table > tfoot > tr > th.active,
-.table > tfoot > tr.
+.table > tfoot > tr.active > td,
+.table > tfoot > tr.active > th {
+  background-color: whitesmoke; }
+
+.table > thead > tr > td.success,
+.table > thead > tr > th.success, .table > thead > tr.success > td, .table > thead > tr.succe
