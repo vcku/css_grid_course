@@ -167,4 +167,10 @@ table th[class*="col-"] {
 .table > tbody > tr.success > td,
 .table > tbody > tr.success > th,
 .table > tfoot > tr > td.success,
-.table > tfoot > tr > th.succ
+.table > tfoot > tr > th.success,
+.table > tfoot > tr.success > td,
+.table > tfoot > tr.success > th {
+  background-color: #dff0d8; }
+
+.table > thead > tr > td.info,
+.table > thead > tr > th.info, .table > thead > tr.info > td, .table > 
