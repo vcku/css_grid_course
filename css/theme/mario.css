@@ -173,4 +173,10 @@ table th[class*="col-"] {
   background-color: #dff0d8; }
 
 .table > thead > tr > td.info,
-.table > thead > tr > th.info, .table > thead > tr.info > td, .table > 
+.table > thead > tr > th.info, .table > thead > tr.info > td, .table > thead > tr.info > th,
+.table > tbody > tr > td.info,
+.table > tbody > tr > th.info,
+.table > tbody > tr.info > td,
+.table > tbody > tr.info > th,
+.table > tfoot > tr > td.info,
+.table > tfoot > tr >
