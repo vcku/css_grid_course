@@ -179,4 +179,10 @@ table th[class*="col-"] {
 .table > tbody > tr.info > td,
 .table > tbody > tr.info > th,
 .table > tfoot > tr > td.info,
-.table > tfoot > tr >
+.table > tfoot > tr > th.info,
+.table > tfoot > tr.info > td,
+.table > tfoot > tr.info > th {
+  background-color: #d9edf7; }
+
+.table > thead > tr > td.warning,
+.table > thead > tr > th.warning, .table > thead 
