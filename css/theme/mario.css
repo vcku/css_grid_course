@@ -185,4 +185,9 @@ table th[class*="col-"] {
   background-color: #d9edf7; }
 
 .table > thead > tr > td.warning,
-.table > thead > tr > th.warning, .table > thead 
+.table > thead > tr > th.warning, .table > thead > tr.warning > td, .table > thead > tr.warning > th,
+.table > tbody > tr > td.warning,
+.table > tbody > tr > th.warning,
+.table > tbody > tr.warning > td,
+.table > tbody > tr.warning > th,
+.table 
