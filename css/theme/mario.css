@@ -190,4 +190,11 @@ table th[class*="col-"] {
 .table > tbody > tr > th.warning,
 .table > tbody > tr.warning > td,
 .table > tbody > tr.warning > th,
-.table 
+.table > tfoot > tr > td.warning,
+.table > tfoot > tr > th.warning,
+.table > tfoot > tr.warning > td,
+.table > tfoot > tr.warning > th {
+  background-color: #fcf8e3; }
+
+.table > thead > tr > td.danger,
+.table > thead > tr > th.danger, .table > thead > t
