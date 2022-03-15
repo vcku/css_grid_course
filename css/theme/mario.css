@@ -202,4 +202,8 @@ table th[class*="col-"] {
 .table > tbody > tr > th.danger,
 .table > tbody > tr.danger > td,
 .table > tbody > tr.danger > th,
-.table > tfoot > tr > td.dan
+.table > tfoot > tr > td.danger,
+.table > tfoot > tr > th.danger,
+.table > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th {
+  background-color: #f2dede; }
