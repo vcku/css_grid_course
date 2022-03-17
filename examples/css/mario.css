@@ -75,3 +75,14 @@
      -moz-transform: translate(40px, 0);
   }
 }
+@-o-keyframes shuffle {
+  50% {
+     -o-transform: translate(40px, 0);
+  }
+}
+@keyframes shuffle {
+  50% {
+     -ms-transform: translate(40px, 0);
+     transform: translate(40px, 0);
+  }
+}
