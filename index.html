@@ -74,3 +74,216 @@
     <section data-background="images/4-3.png" data-background-size="auto 20%" data-background-position="50% bottom">
       <h2>Module By Feature</h2>
       <img class="svg-module fragment" src="images/module3.svg">
+      <img class="svg-module fragment" src="images/module4.svg">
+      <p class="fragment">
+        Supports asynchronous loading of modules in the future
+      </p>
+      <img class="image fragment" src="images/star.gif">
+    </section>
+    <section data-background="images/5-1.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h1>Services</h1>
+      <div class="fragment">
+      <table class=" table table-condensed">
+      <thead>
+      <tr>
+        <th>Features / Recipe type</th>
+        <th>Factory</th>
+        <th>Service</th>
+        <th>Provider</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>can have dependencies</td>
+        <td class="success">yes</td>
+        <td class="success">yes</td>
+        <td class="success">yes</td>
+      </tr>
+      <tr>
+        <td>uses type friendly injection</td>
+        <td class="error">no</td>
+        <td class="success">yes</td>
+        <td class="error">no</td>
+      </tr>
+      <tr>
+        <td>object available in config phase</td>
+        <td class="error">no</td>
+        <td class="error">no</td>
+        <td class="success">yes</td>
+      </tr>
+      <tr>
+        <td>can create functions/primitives</td>
+        <td class="success">yes</td>
+        <td class="error">no</td>
+        <td class="success">yes</td>
+      </tr>
+      </tbody>
+      </table>
+      <small><a href="http://docs.angularjs.org/guide/providers#conclusion">From Angular Developer Guide</a></small>
+      </div>
+    </section>
+    <section data-background="images/5-1.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h3>Service vs Factory</h3>
+      <pre class="fragment"><code data-trim contenteditable>
+var Mario = function() {
+  this.size = 'small';
+};
+Mario.prototype.eatMushroom = function() {
+  this.size = 'large';
+};
+myModule.service('marioService', Mario); // calls new Mario()
+              </code></pre>
+      <pre class="fragment"><code data-trim contenteditable>
+myModule.factory('marioService', function() {
+  var mario = {
+    size: 'small'
+  };
+  return {
+    eatMushroom: function() {
+      mario.size = 'large';
+    }
+  };
+});
+      </code></pre>
+    </section>
+    <section data-background="images/5-1.png" data-background-size="auto 50%" data-background-position="0 bottom">
+      <h3>Provider</h3>
+      <pre class="fragment"><code data-trim contenteditable>
+myModule.provider('marioService', function() {
+  var config = {
+    size: 'small'
+  };
+  return {
+    setSize: function(size) {
+      config.size = size;
+    },
+    $get: function(utilities) {
+      return {
+        eatMushroom: function() { ... },
+        // other methods
+      }
+    }
+  };
+});
+      </code></pre>
+    </section>
+    <section class="dark" data-background-color="#003399" data-background-image="images/7-2.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h2>Asynchronous Events</h2>
+      <pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>
+// in some service
+$rootScope.$broadcast(MARIO_LOADED, { mario: data}); // when data loads
+      </code></pre>
+      <pre class="fragment" data-fragment-index="2"><code data-trim contenteditable>
+// in some controller
+$scope.$on(MARIO_LOADED, doStuffWithMario);
+        </code></pre>
+      <p class="fragment" data-fragment-index="3">What happens if the data doesn't load?</p>
+    </section>
+    <section class="dark" data-background-color="#003399" data-background-image="images/7-2.png" data-background-size="auto 25%" data-background-position="33% bottom">
+      <h2>Promises&nbsp;&nbsp;&nbsp;<code style="text-transform: lowercase;">$q</code></h2>
+      <pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>
+// in some service
+var deferred = $q.defer();
+svc.getMario = function() {
+  return deferred.promise;
+};
+...
+deferred.resolve(data); // when some data loads
+...
+deferred.reject(error); // if data doesn't load
+        </code></pre>
+        <pre class="fragment" data-fragment-index="2"><code data-trim contenteditable>
+// in some controller
+svc.getMario().then( doStuffWithMario, displayError );
+          </code></pre>
+<div class="fragment" data-fragment-index="3">
+  Promises in the View
+      <pre ><code data-trim contenteditable>
+// in some controller
+$scope.mario = marioService.getMario();
+
+// in a view
+{{mario.size}}
+        </code></pre></div>
+    </section>
+    <section class="dark" data-background-color="#003399" data-background-image="images/7-2.png" data-background-size="auto 25%" data-background-position="60% bottom">
+      <h3>Using Promises</h3>
+      <ul>
+        <li class="fragment">Chaining</li>
+        <li class="fragment"><code>$q.all</code></li>
+        <li class="fragment"><code>$q.when</code></li>
+        <li class="fragment">Interceptors</li>
+      </ul>
+    </section>
+    <section class="dark" data-background-color="#003399" data-background-image="images/7-2.png" data-background-size="auto 25%" data-background-position="right bottom">
+      <h3>Resolve</h3>
+      <pre class="fragment" data-fragment-index="0"><code data-trim contenteditable>
+myModule.config(function($routeProvider) {
+
+    $routeProvider.when('/character/:id', {
+      templateUrl: 'profile.html',
+      controller: 'CharacterCtrl',
+      resolve: {
+        character: function($route, CharacterService) {
+          // returns a promise
+          return CharacterService.get($route.current.params.id);
+        }
+      }
+    });
+});
+      </code></pre>
+      <pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>
+
+myModule.controller('CharacterCtrl', function($scope, character) {
+  $scope.character = character;
+});
+      </code></pre>
+    </section>
+    <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h1>Directives</h1>
+      <br>
+      <img class="image" src="images/bowser.gif">
+      <br><br>
+      <p class="fragment" data-fragment-index="1">
+        Why Write Custom Directives?
+      </p>
+      <ul>
+        <li class="fragment" data-fragment-index="2">Reusable Components</li>
+        <li class="fragment" data-fragment-index="3">Manipulate the DOM</li>
+      </ul>
+    </section>
+    <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h3>Directive Example</h3>
+      <div id="example-directive" ng-controller="exampleCtrl" class="example-wrapper">
+        <enemy enemy-type="{{enemyType}}" lives="lives" on-destroy="destroy()"></enemy>
+        <label>Enemy Type: <input type="text" ng-model="enemyType"></label>
+      </div>
+      <pre><code contenteditable>&lt;enemy enemy-type="{{enemyType}}" lives="lives" on-destroy="destroy()"&gt;&lt;/enemy&gt;
+      </code></pre>
+      <pre class="fragment"><code data-trim contenteditable>
+angular.module('demo.characters').directive('enemy', function() {
+    return {
+        restrict: "E",
+        scope: {
+            type: "@enemyType",
+            currentLives: "=lives",
+            onDestroy: "&"
+        },
+        template: "<div ng-class='{goomba: type == \"small\", bowser: type == \"big\"}'></div>",
+        replace: true
+    };
+});
+           </code></pre>
+    </section>
+    <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h3>Restrict</h3>
+      <ul>
+        <li>"E": Element, <code>&lt;my-directive&gt;</code></li>
+        <li>"A": Attribute, <code>&lt;div my-directive&gt;</code></li>
+        <li>"C": Class, <code>&lt;div class="my-directive"&gt;</code></li>
+        <li>Combination e.g. "EA"</li>
+      </ul>
+    </section>
+    <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h3>Scope</h3>
+      <ul>
