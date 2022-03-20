@@ -487,3 +487,57 @@ angular.module('myTemplates', [])
   );
 
   angular.module('myApp').controller('myController', function() {
+  //...
+  });
+        </code></pre>
+      </section>
+    </section>
+  </div>
+</div>
+<audio id="sound-pipe" src="audio/pipe.wav"></audio>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    theme: 'sky',
+    transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+    backgroundTransition: 'slide',
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+
+  Reveal.addEventListener( 'slidechanged', function( event ) {
+    if (event.indexh === 3) {
+      document.getElementById("sound-pipe").play();
+    }
+  });
+
+  // bootstrap angular examples, as separate apps, so Angular doesn't try to interpolate random code samples, which can create errors
+  angular.bootstrap(document.getElementById("example-directive"), ['demo.examples']);
+  angular.bootstrap(document.getElementById("example-watch"), ['demo.examples']);
+
+</script>
+
+</body>
+</html>
+<!--
+            <pre><code data-trim contenteditable>
+
+            </code></pre>
+-->
