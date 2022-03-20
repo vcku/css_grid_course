@@ -287,3 +287,203 @@ angular.module('demo.characters').directive('enemy', function() {
     <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
       <h3>Scope</h3>
       <ul>
+        <li>false: use existing scope (default)</li>
+        <li>true: new scope</li>
+        <li class="fragment"><span class="preferred-method">object: isolated scope, e.g.</span>
+          <ul>
+            <li class="fragment" data-fragment-index="1">"@": pass as string, can be interpolated</li>
+            <li class="fragment" data-fragment-index="2">"=": data bind this property</li>
+            <li class="fragment" data-fragment-index="3">"&": pass a function</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h3>$watch</h3>
+      <div id="example-watch" ng-controller="exampleCtrl" class="example-wrapper">
+        <enemy enemy-type="{{enemyType}}" lives="lives" on-destroy="destroy()"></enemy>
+        <label>Lives: <input type="number" ng-model="lives" min="0" max="10"></label>
+      </div>
+      <pre class="fragment"><code data-trim contenteditable class="language-javascript">
+link: function(scope, iElement, iAttrs) {
+ ...
+      scope.$watch("currentLives", function(newLives, oldLives) {
+            if (newLives > oldLives) {
+                $enemy.animate({width:"+=10px",height:"+=10px"},150).animate({width:"-=10px",height:"-=10px"},150);
+            } else if (newLives < oldLives) {
+                $enemy.animate({width:"-=10px",height:"-=10px"},150).animate({width:"+=10px",height:"+=10px"},150);
+            }
+        });
+...
+}
+      </code></pre>
+    </section>
+    <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+      <h3>Wrapping jQuery</h3>
+      <pre class="fragment"><code data-trim contenteditable class="language-javascript">
+// jQuery Land
+$(document).on('click.fireball', function(e) {
+    var $fireball = $("&lt;div class='fire-ball'&gt;&lt;/div&gt;");
+    var offset = $character.offset();
+    $fireball.css({top: offset.top + ($character.height()/2), left: offset.left + $character.width()});
+    $character.after($fireball);
+    $fireball.animate({top: e.pageY, left: e.pageX}, function() {
+        $fireball.remove();
+        $(e.target).trigger("attack");
+    });
+});
+      </code></pre>
+<pre class="fragment"><code data-trim contenteditable class="language-javascript">
+// in Angular directive
+link: function(scope, iElement, iAttrs) {
+  var $enemy = $(iElement[0]);
+
+  $enemy.on("attack", function(e) {
+      scope.$apply(function() {
+          scope.currentLives = scope.currentLives - 1;
+          if (scope.currentLives === 0) {
+              $enemy.remove();
+              scope.onDestroy();
+          }
+      });
+  });
+}
+</code></pre>
+    </section>
+    <section>
+      <h1><a href="examples/directive.html" target="_blank">DEMO</a></h1>
+    </section>
+    <section data-background="images/1-1.png" data-background-size="auto 25%" data-background-position="right bottom">
+      <h1>The End<br>Thanks!</h1>
+      <h3 style="font-weight: bold;"><a href="http://alicialiu.net">Alicia Liu</a></h3>
+      <p><a href="http://twitter.com/aliciatweet">@aliciatweet</a></p>
+      <p><a href="http://alicialiu.net/leveling-up-angular-talk">http://alicialiu.net/leveling-up-angular-talk</a></p>
+      <p><br><br><small>Images adapted from <a href="http://mariowiki.com" target="_blank">Mario Wiki</a></small></p>
+    </section>
+    <section>
+      <section>
+        <h1>Bonus Levels</h1>
+      </section>
+      <section>
+        <h3>Bad Smells</h3>
+        <ul>
+          <li>Referencing DOM elements inside controllers</li>
+          <li>Using $parent</li>
+          <li>Over-reliance on $rootScope</li>
+          <li>Over-reliance on $rootScope.$broadcast</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Digest Loop Triggers</h3>
+        <ul>
+          <li>Event handlers</li>
+          <li>Navigation</li>
+          <li>$http</li>
+          <li>$timeout</li>
+        </ul>
+      </section>
+      <section>
+          <h3>Compile vs Link</h3>
+            <ul>
+              <li>No scope</li>
+              <li>Runs once</li>
+              <li>Runs earlier</li>
+              <li>Can return preLink</li>
+            </ul>
+            <ul style="float: right;">
+              <li>Has scope</li>
+              <li>Runs n times inside ng-repeat</li>
+            </ul>
+      </section>
+      <section>
+          <h3>Compile Example</h3>
+            <pre class="fragment"><code data-trim contenteditable class="language-javascript">
+angular.module('static').directive('staticLinky', function ($filter) {
+  return {
+    restrict: 'A',
+    compile: function(tElem) {
+      var $elem = $(tElem);
+      $elem.html($filter('linky')($elem.text(), "_blank"));
+    }
+  };
+});
+            </code></pre>
+        <pre class="fragment"><code data-trim contenteditable>
+          &lt;p static-linky&gt;Link this http://example.com&lt;/p&gt;
+        </code></pre>
+      </section>
+      <section>
+        <h3>Precompiling Templates</h3>
+        <pre><code data-trim contenteditable>
+          // templates.js
+          angular.module('myTemplates', [])
+          .run(['$templateCache', function($templateCache) {
+          $templateCache.put("template1.html", "<h1>Hello World!</h1>");
+          $templateCache.put("template2.html", "...");
+          }]);
+        </code></pre>
+
+        <p>Rails/Ruby example</p>
+        <pre><code data-trim contenteditable language-javascript>
+// templates.js.erb
+angular.module('myTemplates', [])
+    .run(['$templateCache', function($templateCache) {
+      <% Dir.glob(Rails.root.join('app','assets','templates', '*.html')).each do |f| %>
+        $templateCache.put("<%= File.basename(f) %>", <%= File.read(f).to_json %>);
+      <% end %>
+    }]);
+        </code></pre>
+    </section>
+      <section class="dark" data-background-color="#000" data-background-image="images/8-4.png" data-background-size="auto 25%" data-background-position="0 bottom">
+            <h4>Communicating Between Directives</h4>
+      <pre class="fragment"><code contenteditable="">&lt;mario fire-mode="{{mario.mode}}"&gt;&lt;/mario&gt;</code></pre>
+      <pre class="fragment"><code data-trim contenteditable class="language-javascript">
+  myModule.directive('mario', function() {
+      return {
+          restrict: "E",
+          scope: {
+              fireMode: "@"
+          }
+      }
+  }).
+  directive('fireMode', function() {
+      return {
+          restrict: "A",
+          link: function(scope, iElement, iAttrs) {
+              var $character = $(iElement[0]);
+              iAttrs.$observe('fireMode', function(mode) {
+                  if (mode === "fire") {
+                      $character.addClass("fire-mode");
+                  } else {
+                      $character.removeClass("fire-mode");
+                  }
+              });
+          }
+      };
+  })
+      </code></pre>
+      </section>
+      <section data-background="images/4-3.png" data-background-size="auto 25%" data-background-position="0 bottom">
+        <p>Angular sample code</p>
+        <pre><code data-trim contenteditable>
+  // declare a module
+  var myAppModule = angular.module('myApp', []);
+
+  // configure the module
+  myAppModule.config(
+  //...
+  );
+
+  // Add a controller
+  function Ctrl($scope) {
+  //...
+  }
+
+        </code></pre>
+        <p class="fragment">Global variables WTF?!</p>
+        <pre class="fragment"><code data-trim contenteditable>
+  angular.module('myApp').config(
+  //...
+  );
+
+  angular.module('myApp').controller('myController', function() {
