@@ -17,4 +17,13 @@
 			}
 
 			// re-highlight when focus is lost (for edited code)
-			element.addEventL
+			element.addEventListener( 'focusout', function( event ) {
+				hljs.highlightBlock( event.currentTarget );
+			}, false );
+		}
+	}
+})();
+// END CUSTOM REVEAL.JS INTEGRATION
+
+// highlight.js build includes support for:
+// Bash, C#, C++, CSS, Diff, HTML, XML,
