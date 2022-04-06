@@ -26,4 +26,6 @@
 // END CUSTOM REVEAL.JS INTEGRATION
 
 // highlight.js build includes support for:
-// Bash, C#, C++, CSS, Diff, HTML, XML,
+// Bash, C#, C++, CSS, Diff, HTML, XML, HTTP, Ini, JSON, Java, JavaScript, PHP, Perl, Python, Ruby, SQL, Clojure, GLSL, Lua, Scala, CoffeeScript, Go, Objective C, ActionScript, Markdown
+
+var hljs=new function(){function l(o){return o.replace(/&/gm,"
