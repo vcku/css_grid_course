@@ -28,4 +28,4 @@
 // highlight.js build includes support for:
 // Bash, C#, C++, CSS, Diff, HTML, XML, HTTP, Ini, JSON, Java, JavaScript, PHP, Perl, Python, Ruby, SQL, Clojure, GLSL, Lua, Scala, CoffeeScript, Go, Objective C, ActionScript, Markdown
 
-var hljs=new function(){function l(o){return o.replace(/&/gm,"
+var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/</gm,"&lt;").replace(/>/gm,"&gt;")}function b(p){for(var o=p.firstChild;o;o=o.nextSibling){if(o.nodeName=="CODE"){return o}if(!(o.nodeType==3&&o.nodeValue.match(/\s+/))){break}}}function h(p,o){return Arra
