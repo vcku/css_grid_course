@@ -16,4 +16,18 @@ page.viewportSize  = {
 	height: 768
 };
 
-page.pap
+page.paperSize = {
+	format: 'letter',
+	orientation: 'landscape',
+	margin: {
+		left: '0',
+		right: '0',
+		top: '0',
+		bottom: '0'
+	}
+};
+
+var revealFile = system.args[1] || 'index.html?print-pdf';
+var slideFile = system.args[2] || 'slides.pdf';
+
+if( s
