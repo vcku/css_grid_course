@@ -30,4 +30,13 @@ page.paperSize = {
 var revealFile = system.args[1] || 'index.html?print-pdf';
 var slideFile = system.args[2] || 'slides.pdf';
 
-if( s
+if( slideFile.match( /\.pdf$/gi ) === null ) {
+	slideFile += '.pdf';
+}
+
+console.log( 'Printing PDF...' );
+
+page.open( revealFile, function( status ) {
+	console.log( 'Printed succesfully' );
+	page.render( slideFile );
+	
