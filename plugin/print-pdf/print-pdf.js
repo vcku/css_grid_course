@@ -39,4 +39,6 @@ console.log( 'Printing PDF...' );
 page.open( revealFile, function( status ) {
 	console.log( 'Printed succesfully' );
 	page.render( slideFile );
-	
+	phantom.exit();
+} );
+
