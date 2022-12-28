@@ -18,4 +18,15 @@
  * http://lab.hakim.se/zoom-js
  * MIT licensed
  *
- * Copyright (C) 2011-2012 Hakim El H
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+var zoom = (function(){
+
+	// The current zoom level (scale)
+	var level = 1;
+
+	// The current mouse position, used for panning
+	var mouseX = 0,
+		mouseY = 0;
+
+	// Timeout before pan is acti
