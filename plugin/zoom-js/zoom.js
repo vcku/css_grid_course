@@ -10,4 +10,12 @@
 	} );
 
 	Reveal.addEventListener( 'overviewshown', function() { isEnabled = false; } );
-	Reveal.addEven
+	Reveal.addEventListener( 'overviewhidden', function() { isEnabled = true; } );
+})();
+
+/*!
+ * zoom.js 0.2 (modified version for use with reveal.js)
+ * http://lab.hakim.se/zoom-js
+ * MIT licensed
+ *
+ * Copyright (C) 2011-2012 Hakim El H
