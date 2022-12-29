@@ -29,4 +29,11 @@ var zoom = (function(){
 	var mouseX = 0,
 		mouseY = 0;
 
-	// Timeout before pan is acti
+	// Timeout before pan is activated
+	var panEngageTimeout = -1,
+		panUpdateInterval = -1;
+
+	var currentOptions = null;
+
+	// Check for transform support so that we can fallback otherwise
+	var supportsTransforms = 	'WebkitTransform' in doc
