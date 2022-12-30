@@ -42,4 +42,8 @@ var zoom = (function(){
 								'OTransform' in document.body.style ||
 								'transform' in document.body.style;
 
-	if( supportsTr
+	if( supportsTransforms ) {
+		// The easing that will be applied when we zoom in/out
+		document.body.style.transition = 'transform 0.8s ease';
+		document.body.style.OTransition = '-o-transform 0.8s ease';
+		document.body.style.
