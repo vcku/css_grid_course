@@ -36,4 +36,10 @@ var zoom = (function(){
 	var currentOptions = null;
 
 	// Check for transform support so that we can fallback otherwise
-	var supportsTransforms = 	'WebkitTransform' in doc
+	var supportsTransforms = 	'WebkitTransform' in document.body.style ||
+								'MozTransform' in document.body.style ||
+								'msTransform' in document.body.style ||
+								'OTransform' in document.body.style ||
+								'transform' in document.body.style;
+
+	if( supportsTr
