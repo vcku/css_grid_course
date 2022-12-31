@@ -51,4 +51,12 @@ var zoom = (function(){
 		document.body.style.WebkitTransition = '-webkit-transform 0.8s ease';
 	}
 
-	// Zoom out i
+	// Zoom out if the user hits escape
+	document.addEventListener( 'keyup', function( event ) {
+		if( level !== 1 && event.keyCode === 27 ) {
+			zoom.out();
+		}
+	}, false );
+
+	// Monitor mouse movement for panning
+	document.addEventListener( 'mousemove', funct
