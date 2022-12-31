@@ -46,4 +46,9 @@ var zoom = (function(){
 		// The easing that will be applied when we zoom in/out
 		document.body.style.transition = 'transform 0.8s ease';
 		document.body.style.OTransition = '-o-transform 0.8s ease';
-		document.body.style.
+		document.body.style.msTransition = '-ms-transform 0.8s ease';
+		document.body.style.MozTransition = '-moz-transform 0.8s ease';
+		document.body.style.WebkitTransition = '-webkit-transform 0.8s ease';
+	}
+
+	// Zoom out i
