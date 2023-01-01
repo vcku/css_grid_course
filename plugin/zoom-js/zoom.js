@@ -59,4 +59,13 @@ var zoom = (function(){
 	}, false );
 
 	// Monitor mouse movement for panning
-	document.addEventListener( 'mousemove', funct
+	document.addEventListener( 'mousemove', function( event ) {
+		if( level !== 1 ) {
+			mouseX = event.clientX;
+			mouseY = event.clientY;
+		}
+	}, false );
+
+	/**
+	 * Applies the CSS required to zoom in, prioritizes use of CSS3
+	 * transforms
