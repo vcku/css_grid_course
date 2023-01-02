@@ -76,4 +76,8 @@ var zoom = (function(){
 	 * @param {Number} elementOffsetY
 	 * @param {Number} scale
 	 */
-	func
+	function magnify( pageOffsetX, pageOffsetY, elementOffsetX, elementOffsetY, scale ) {
+
+		if( supportsTransforms ) {
+			var origin = pageOffsetX +'px '+ pageOffsetY +'px',
+				transform = 'translate('+ -elementOffsetX +'px,'+ -ele
