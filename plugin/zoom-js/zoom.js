@@ -68,4 +68,12 @@ var zoom = (function(){
 
 	/**
 	 * Applies the CSS required to zoom in, prioritizes use of CSS3
-	 * transforms
+	 * transforms but falls back on zoom for IE.
+	 *
+	 * @param {Number} pageOffsetX
+	 * @param {Number} pageOffsetY
+	 * @param {Number} elementOffsetX
+	 * @param {Number} elementOffsetY
+	 * @param {Number} scale
+	 */
+	func
