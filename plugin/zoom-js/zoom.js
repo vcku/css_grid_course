@@ -80,4 +80,9 @@ var zoom = (function(){
 
 		if( supportsTransforms ) {
 			var origin = pageOffsetX +'px '+ pageOffsetY +'px',
-				transform = 'translate('+ -elementOffsetX +'px,'+ -ele
+				transform = 'translate('+ -elementOffsetX +'px,'+ -elementOffsetY +'px) scale('+ scale +')';
+
+			document.body.style.transformOrigin = origin;
+			document.body.style.OTransformOrigin = origin;
+			document.body.style.msTransformOrigin = origin;
+			document.body.style.MozTransformOrigi
