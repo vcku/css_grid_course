@@ -85,4 +85,9 @@ var zoom = (function(){
 			document.body.style.transformOrigin = origin;
 			document.body.style.OTransformOrigin = origin;
 			document.body.style.msTransformOrigin = origin;
-			document.body.style.MozTransformOrigi
+			document.body.style.MozTransformOrigin = origin;
+			document.body.style.WebkitTransformOrigin = origin;
+
+			document.body.style.transform = transform;
+			document.body.style.OTransform = transform;
+			document.body.style.msTransform = transfor
