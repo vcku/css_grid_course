@@ -98,4 +98,12 @@ var zoom = (function(){
 			// Reset all values
 			if( scale === 1 ) {
 				document.body.style.position = '';
-				document.body.s
+				document.body.style.left = '';
+				document.body.style.top = '';
+				document.body.style.width = '';
+				document.body.style.height = '';
+				document.body.style.zoom = '';
+			}
+			// Apply scale
+			else {
+				document.body.st
