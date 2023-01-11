@@ -90,4 +90,12 @@ var zoom = (function(){
 
 			document.body.style.transform = transform;
 			document.body.style.OTransform = transform;
-			document.body.style.msTransform = transfor
+			document.body.style.msTransform = transform;
+			document.body.style.MozTransform = transform;
+			document.body.style.WebkitTransform = transform;
+		}
+		else {
+			// Reset all values
+			if( scale === 1 ) {
+				document.body.style.position = '';
+				document.body.s
