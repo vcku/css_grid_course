@@ -109,4 +109,12 @@ var zoom = (function(){
 				document.body.style.position = 'relative';
 				document.body.style.left = ( - ( pageOffsetX + elementOffsetX ) / scale ) + 'px';
 				document.body.style.top = ( - ( pageOffsetY + elementOffsetY ) / scale ) + 'px';
-				document.body.style.
+				document.body.style.width = ( scale * 100 ) + '%';
+				document.body.style.height = ( scale * 100 ) + '%';
+				document.body.style.zoom = scale;
+			}
+		}
+
+		level = scale;
+
+		if( level !== 1 && document.docu
