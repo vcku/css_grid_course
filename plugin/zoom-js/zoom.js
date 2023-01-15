@@ -117,4 +117,13 @@ var zoom = (function(){
 
 		level = scale;
 
-		if( level !== 1 && document.docu
+		if( level !== 1 && document.documentElement.classList ) {
+			document.documentElement.classList.add( 'zoomed' );
+		}
+		else {
+			document.documentElement.classList.remove( 'zoomed' );
+		}
+	}
+
+	/**
+	 * Pan the document when the mosue cursor approaches
