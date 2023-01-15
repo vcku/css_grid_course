@@ -106,4 +106,7 @@ var zoom = (function(){
 			}
 			// Apply scale
 			else {
-				document.body.st
+				document.body.style.position = 'relative';
+				document.body.style.left = ( - ( pageOffsetX + elementOffsetX ) / scale ) + 'px';
+				document.body.style.top = ( - ( pageOffsetY + elementOffsetY ) / scale ) + 'px';
+				document.body.style.
