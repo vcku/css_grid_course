@@ -126,4 +126,15 @@ var zoom = (function(){
 	}
 
 	/**
-	 * Pan the document when the mosue cursor approaches
+	 * Pan the document when the mosue cursor approaches the edges
+	 * of the window.
+	 */
+	function pan() {
+		var range = 0.12,
+			rangeX = window.innerWidth * range,
+			rangeY = window.innerHeight * range,
+			scrollOffset = getScrollOffset();
+
+		// Up
+		if( mouseY < rangeY ) {
+			wi
