@@ -137,4 +137,8 @@ var zoom = (function(){
 
 		// Up
 		if( mouseY < rangeY ) {
-			wi
+			window.scroll( scrollOffset.x, scrollOffset.y - ( 1 - ( mouseY / rangeY ) ) * ( 14 / level ) );
+		}
+		// Down
+		else if( mouseY > window.innerHeight - rangeY ) {
+			window.scroll( scrollOffset.
