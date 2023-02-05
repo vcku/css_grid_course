@@ -141,4 +141,9 @@ var zoom = (function(){
 		}
 		// Down
 		else if( mouseY > window.innerHeight - rangeY ) {
-			window.scroll( scrollOffset.
+			window.scroll( scrollOffset.x, scrollOffset.y + ( 1 - ( window.innerHeight - mouseY ) / rangeY ) * ( 14 / level ) );
+		}
+
+		// Left
+		if( mouseX < rangeX ) {
+			window.scroll( scrollOffset.x - ( 1 - ( mouseX / rangeX ) ) * ( 14 / le
