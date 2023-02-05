@@ -165,4 +165,9 @@ var zoom = (function(){
 		/**
 		 * Zooms in on either a rectangle or HTML element.
 		 *
-	
+		 * @param {Object} options
+		 *   - element: HTML element to zoom in on
+		 *   OR
+		 *   - x/y: coordinates in non-transformed space to zoom in on
+		 *   - width/height: the portion of the screen to zoom in on
+		 *
