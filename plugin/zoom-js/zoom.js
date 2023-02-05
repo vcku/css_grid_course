@@ -146,4 +146,13 @@ var zoom = (function(){
 
 		// Left
 		if( mouseX < rangeX ) {
-			window.scroll( scrollOffset.x - ( 1 - ( mouseX / rangeX ) ) * ( 14 / le
+			window.scroll( scrollOffset.x - ( 1 - ( mouseX / rangeX ) ) * ( 14 / level ), scrollOffset.y );
+		}
+		// Right
+		else if( mouseX > window.innerWidth - rangeX ) {
+			window.scroll( scrollOffset.x + ( 1 - ( window.innerWidth - mouseX ) / rangeX ) * ( 14 / level ), scrollOffset.y );
+		}
+	}
+
+	function getScrollOffset() {
+		return {
