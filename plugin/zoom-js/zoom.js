@@ -156,3 +156,13 @@ var zoom = (function(){
 
 	function getScrollOffset() {
 		return {
+			x: window.scrollX !== undefined ? window.scrollX : window.pageXOffset,
+			y: window.scrollY !== undefined ? window.scrollY : window.pageXYffset
+		}
+	}
+
+	return {
+		/**
+		 * Zooms in on either a rectangle or HTML element.
+		 *
+	
