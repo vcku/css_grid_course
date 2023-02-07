@@ -170,4 +170,8 @@ var zoom = (function(){
 		 *   OR
 		 *   - x/y: coordinates in non-transformed space to zoom in on
 		 *   - width/height: the portion of the screen to zoom in on
-		 *
+		 *   - scale: can be used instead of width/height to explicitly set scale
+		 */
+		to: function( options ) {
+			// Due to an implementation limitation we can't zoom in
+			// to another element without zooming out firs
