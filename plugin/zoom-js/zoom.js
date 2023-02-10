@@ -174,4 +174,14 @@ var zoom = (function(){
 		 */
 		to: function( options ) {
 			// Due to an implementation limitation we can't zoom in
-			// to another element without zooming out firs
+			// to another element without zooming out first
+			if( level !== 1 ) {
+				zoom.out();
+			}
+			else {
+				options.x = options.x || 0;
+				options.y = options.y || 0;
+
+				// If an element is set, that takes precedence
+				if( !!options.element ) {
+					// Sp
