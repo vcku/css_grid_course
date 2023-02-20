@@ -188,4 +188,9 @@ var zoom = (function(){
 					var padding = 20;
 
 					options.width = options.element.getBoundingClientRect().width + ( padding * 2 );
-					options.height = options.element.getBoundin
+					options.height = options.element.getBoundingClientRect().height + ( padding * 2 );
+					options.x = options.element.getBoundingClientRect().left - padding;
+					options.y = options.element.getBoundingClientRect().top - padding;
+				}
+
+				// If width/heig
