@@ -193,4 +193,6 @@ var zoom = (function(){
 					options.y = options.element.getBoundingClientRect().top - padding;
 				}
 
-				// If width/heig
+				// If width/height values are set, calculate scale from those values
+				if( options.width !== undefined && options.height !== undefined ) {
+					options.scale = Math.max( Math.min( window.innerWidth / options.width, windo
