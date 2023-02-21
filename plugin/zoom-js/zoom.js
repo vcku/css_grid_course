@@ -195,4 +195,14 @@ var zoom = (function(){
 
 				// If width/height values are set, calculate scale from those values
 				if( options.width !== undefined && options.height !== undefined ) {
-					options.scale = Math.max( Math.min( window.innerWidth / options.width, windo
+					options.scale = Math.max( Math.min( window.innerWidth / options.width, window.innerHeight / options.height ), 1 );
+				}
+
+				if( options.scale > 1 ) {
+					options.x *= options.scale;
+					options.y *= options.scale;
+
+					var scrollOffset = getScrollOffset();
+
+					if( options.element ) {
+		
