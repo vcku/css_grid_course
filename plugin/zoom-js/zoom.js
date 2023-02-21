@@ -205,4 +205,11 @@ var zoom = (function(){
 					var scrollOffset = getScrollOffset();
 
 					if( options.element ) {
-		
+						scrollOffset.x -= ( window.innerWidth - ( options.width * options.scale ) ) / 2;
+					}
+
+					magnify( scrollOffset.x, scrollOffset.y, options.x, options.y, options.scale );
+
+					if( options.pan !== false ) {
+
+	
