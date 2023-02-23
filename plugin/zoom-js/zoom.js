@@ -230,4 +230,12 @@ var zoom = (function(){
 		 */
 		out: function() {
 			clearTimeout( panEngageTimeout );
-			clearInterval( panUpdateInterv
+			clearInterval( panUpdateInterval );
+
+			var scrollOffset = getScrollOffset();
+
+			if( currentOptions && currentOptions.element ) {
+				scrollOffset.x -= ( window.innerWidth - ( currentOptions.width * currentOptions.scale ) ) / 2;
+			}
+
+			magnify( scro
