@@ -218,4 +218,16 @@ var zoom = (function(){
 							panUpdateInterval = setInterval( pan, 1000 / 60 );
 						}, 800 );
 
-					
+					}
+				}
+
+				currentOptions = options;
+			}
+		},
+
+		/**
+		 * Resets the document zoom state to its default.
+		 */
+		out: function() {
+			clearTimeout( panEngageTimeout );
+			clearInterval( panUpdateInterv
