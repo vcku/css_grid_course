@@ -238,4 +238,19 @@ var zoom = (function(){
 				scrollOffset.x -= ( window.innerWidth - ( currentOptions.width * currentOptions.scale ) ) / 2;
 			}
 
-			magnify( scro
+			magnify( scrollOffset.x, scrollOffset.y, 0, 0, 1 );
+
+			level = 1;
+		},
+
+		// Alias
+		magnify: function( options ) { this.to( options ) },
+		reset: function() { this.out() },
+
+		zoomLevel: function() {
+			return level;
+		}
+	}
+
+})();
+
